@@ -100,7 +100,7 @@
           "ImageSpec": {
             "Publisher": "esri",
             "Offer": "arcgis-enterprise",
-            "SKU": "byol-114",
+            "SKU": "byol-115",
             "Version": "latest"
           },
           "VMSize": "Standard_D4s_v5",
@@ -115,7 +115,7 @@
           "ImageSpec": {
             "Publisher": "esri",
             "Offer": "arcgis-enterprise",
-            "SKU": "byol-114",
+            "SKU": "byol-115",
             "Version": "latest"
           },
           "VMSize": "Standard_D4s_v5",
@@ -352,7 +352,7 @@
       "value": "[Resource Prefix of the Base Deployment]"
     },
     "arcgisDeploymentVersion": {
-      "value": "11.4"
+      "value": "11.5"
     }
   }
 }

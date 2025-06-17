@@ -5,14 +5,14 @@
     "location": {
       "value": "eastus"
     },
-    "isMultiTier":{
+    "isgsltiTier":{
       "value": "true"
     },
     "environment": {
       "value": "AzureCloud"
     },
     "deploymentPrefix": {
-      "value": "gm"
+      "value": "gs"
     },
     "usesPrivateIP": {
       "value": false
@@ -30,13 +30,13 @@
       "value": "[If usesExistingPublicIP is false, not required. Else name of an existing public ip]"
     },
     "dnsPrefixForPublicIpAddress": {
-      "value": "gmm"
+      "value": "gs"
     },
     "externalDnsHostName": {
-      "value": "[TODO - Example (If using Self Signed Certificate) - gmm.eastus.cloudapp.azure.com ]"
+      "value": "[TODO - Example (If using Self Signed Certificate) - gs.eastus.cloudapp.azure.com ]"
     },
     "secondaryDnsHostName": {
-      "value": "[TODO - Example (If using Self Signed Certificate) - bmm2.eastus.cloudapp.azure.com - the certificate should contain SAN referencing both externalDnsHostName and secondaryDnsHostName]"
+      "value": "[TODO - Example (If using Self Signed Certificate) - gs2.eastus.cloudapp.azure.com - the certificate should contain SAN referencing both externalDnsHostName and secondaryDnsHostName]"
     },
     "sslCertificateFileName": {
       "value": "[TODO - wildcard.eastus.cloudapp.azure.com.pfx]"
@@ -80,52 +80,22 @@
     "virtualMachines":{
       "value": [
         {
-          "VMName": "gmFileShare",
-          "AzureVMImageType": 0,
-          "ImageSpec": {
-            "Publisher": "MicrosoftWindowsServer",
-            "Offer": "WindowsServer",
-            "SKU": "2022-datacenter-smalldisk-g2",
-            "Version": "latest"
-          },
-          "VMSize": "Standard_D4s_v5",
-          "OSDiskType": "Premium_LRS",
-          "OSDiskSize": 128,
-          "VMRoles": "FileShare",
-          "DataDisks": []
-        },
-        {
-          "VMName": "gmServer-0",
+          "VMName": "gsServer-0",
           "AzureVMImageType": 0,
           "ImageSpec": {
             "Publisher": "esri",
             "Offer": "arcgis-enterprise",
-            "SKU": "byol-114",
+            "SKU": "byol-115",
             "Version": "latest"
           },
           "VMSize": "Standard_D4s_v5",
           "OSDiskType": "Premium_LRS",
           "OSDiskSize": 128,
-          "VMRoles": "Server",
+          "VMRoles": "Server,FileShare",
           "DataDisks": []
         },
         {
-          "VMName": "gmServer-1",
-          "AzureVMImageType": 0,
-          "ImageSpec": {
-            "Publisher": "esri",
-            "Offer": "arcgis-enterprise",
-            "SKU": "byol-114",
-            "Version": "latest"
-          },
-          "VMSize": "Standard_D4s_v5",
-          "OSDiskType": "Premium_LRS",
-          "OSDiskSize": 128,
-          "VMRoles": "Server",
-          "DataDisks": []
-        },
-        {
-          "VMName": "gmJumpbox",
+          "VMName": "gsJumpbox",
           "AzureVMImageType": 0,
           "ImageSpec": {
             "Publisher": "MicrosoftWindowsServer",
@@ -142,7 +112,7 @@
       ]
     },
     "virtualMachineNames": {
-      "value": "gmServer-0,gmServer-1"
+      "value": "gsServer-0"
     },
     "timeZoneId": {
       "value": "Pacific Standard Time"
@@ -217,7 +187,7 @@
       "value": false
     },
     "fileShareVirtualMachineName": {
-      "value": "gmFileShare"
+      "value": "gsServer-0"
     },
     "cloudStorageAccountName": {
       "value": ""
@@ -352,7 +322,7 @@
       "value": "[Resource Prefix of the Base Deployment]"
     },
     "arcgisDeploymentVersion": {
-      "value": "11.4"
+      "value": "11.5"
     }
   }
 }
